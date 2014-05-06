@@ -1,0 +1,5 @@
+tmp/
+.sass-cache/
+crash.log
+.DS_Store
+output/
