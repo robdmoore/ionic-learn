@@ -8360,6 +8360,7 @@ footer.main {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   color: #B4BFD1;
+  margin-bottom: 30px;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 10px; }
@@ -8375,7 +8376,8 @@ footer.main {
   font-size: 20px;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
-  margin-bottom: 15px; }
+  margin-bottom: 0px;
+  margin-top: 40px; }
 .content.formula p, .content.video p {
   color: #727983;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -8383,7 +8385,7 @@ footer.main {
   font-size: 15px;
   line-height: 30px; }
 .content.formula article > p, .content.video article > p {
-  margin: 25px 0; }
+  margin: 10px 0px 30px 0px; }
 .content.formula .CodeRay, .content.video .CodeRay {
   background-color: #ebf0f6; }
   .content.formula .CodeRay pre, .content.video .CodeRay pre {
