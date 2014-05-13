@@ -3,7 +3,7 @@
   <head>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta charset='utf-8'>
-    <title>Ionic Lists - Part 1 | Videos | Learn Ionic</title>
+    <title>The Sidemenu | Videos | Learn Ionic</title>
     <link href='/css/site.css' rel='stylesheet'>
     <link href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css' rel='stylesheet'>
   </head>
@@ -86,7 +86,7 @@
             </nav>
             <article>
               <header>
-                <h1>Ionic Lists - Part 1</h1>
+                <h1>The Sidemenu</h1>
                 <div class='byline'>
                   <img src='/img/authors/gerred-dillon.png'>
                   <span class='author'>
@@ -95,9 +95,9 @@
                   </span>
                   <time></time>
                 </div>
-                <p class='description'>A core element to any app is the display of lists. From todos to social feeds, lists are the building block for much more complex UIs. Learn about lists in Ionic in this video.</p>
+                <p class='description'>The side menu is a great way to display content without losing a lot of screen real estate. Learn how to add the side menu to your apps.</p>
               </header>
-              <iframe allowfullscreen='' frameborder='0' height='505' src='//www.youtube.com/embed/G_n8r2VDuZ0' width='847'></iframe>
+              <iframe allowfullscreen='' frameborder='0' height='505' src='//www.youtube.com/embed/MN6vCWp4CdE' width='847'></iframe>
               <ul class='nav nav-tabs'>
                 <li class='active'>
                   <a data-toggle='tab' href='#details'>Details</a>
@@ -113,45 +113,35 @@
                 <div class='tab-pane active' id='details'>
                   <h2 id="resources">Resources:</h2>
                   
-                  <p><a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat documentation</a></p>
+                  <p><a href="http://ionicframework.com/docs/api/directive/ionSideMenus/">ion-side-menus documentation</a></p>
                   
-                  <p><a href="http://ionicframework.com/docs/api/directive/ionList/">ion-list documentation</a></p>
-                  
-                  <p><a href="http://learn.ionicframework.com/formulas/navigation-bar-vs-header-bar/">ion-header-bar Formula</a></p>
+                  <p><a href="http://ionicframework.com/docs/api/service/$ionicSideMenuDelegate/">$ionicSideMenuDelegate documentation</a></p>
                 </div>
                 <div class='tab-pane' id='transcript'>
                   <article>
-                    <p>Let’s talk about lists. Lists are a core UI element of any mobile app, and almost every app has some type of list. Because they are so essential to building an app, Ionic makes it easy to work with them.</p>
+                    <p>The side menu is a great way of adding a lot of functionality without taking up a lot of real estate. It’s an easy element to add in Ionic and can be designed to slide out from the left or right.</p>
                     
-                    <p>Here, I have the basic skeleton for an Ionic app. To add a list, let’s use the <code>ion-list</code> and <code>ion-item</code> directives. Creating a list of 5 items with these directives is pretty straightforward. When we refresh we can see that we have native-like scrolling and something that looks like a list.</p>
+                    <p>We’ll start with a basic Ionic app with a controller. I’ve already added a header with a button in for showing the side menu.</p>
                     
-                    <p>It’s worth noting this works like any other directive in Angular. It wouldn’t be a list if we couldn’t add some data. First, I’m going to add our Todos controller into the markup. Next, I’m going to create the controller on the JavaScript side.</p>
+                    <p>To start, let’s add the click action for the side menu. We’ll call the function toggleLeft.</p>
                     
-                    <p>Let’s add some todos to our scope. I already have a few, for some chores around the house. Right now, the markup for our list is static and won’t respond to updates. Let’s change that using the <code>ng-repeat</code> directive. If you’re new to AngularJS, and don’t know what <code>ng-repeat</code> means, check out the notes for a link to the documentation on it.</p>
+                    <p>To implement this on the controller, we need to bring in a service that will communicate with the side menus. This is the <code>$ionicSideMenuDelegate</code>. Inject it as a dependency and create the toggleLeft function. It’s purpose is to call toggleLeft on the delegate.</p>
                     
-                    <p>Now that we’re done, we can save, refresh, and check out our list to see that it’s data driven. From our controller, we can remove items, add items, save, and watch it all update.</p>
+                    <p>At this point, we’re ready to write markup. Create the ion-side-menus element, with an ion-side-menu. Here’s where we specify the side.</p>
                     
-                    <p>But it wouldn’t really be a todo list if we couldn’t add some items to it. Fortunately, adding to our list is as simple as adding to the todos array in our scope. For this example, I’m just going to add a header button. If this example looks unfamiliar to you, check out the formula for header bars in the notes.</p>
+                    <p>We’ll add some menu items and refresh. Immediately we can see something is wrong: our side menu is sitting on top of our main content!</p>
                     
-                    <p>We now have an add button that is pointing to an addTodo function on click, so let’s wire that up. For our todo list, I’m just going to push a todo onto the end of our todos array. Now we can save, refresh, and try it out. When we click add, we watch the todos get added to the list.</p>
+                    <p>This is because the side menu system has its own content element. If we create the <code>ion-side-menu-content</code> directive and place the header inside of it, we now have a working side menu.</p>
                     
-                    <p>No todo list would be complete without a delete function. Ionic ships with that function by letting you toggle a delete mode on your list. Let’s add a flag to our scope to help us maintain that state.</p>
-                    
-                    <p>Back in the markup add a <code>show-delete</code> directive to <code>ion-list</code>. This directive is used to determine if the list is in delete mode. If it is, the list will display a delete drawer next to each <code>ion-item</code> in the list. We also need a header button to toggle whether or not we are in delete mode. I’m just going to add a simple button that does that.</p>
-                    
-                    <p>Right now, we don’t actually have a delete button. Ionic is flexible in letting you decide exactly what that should look like. In this case I’m just going to replace our item with a standard looking delete button. When it’s clicked, all we’re going to do is splice that item out of the array and let the scope update.</p>
-                    
-                    <p>Now when we add some items, we can toggle delete, and remove them from our array again. This gets us started with using lists in Ionic.</p>
-                    
-                    <p>In the notes, I’ve linked to a formula that talks about lists more in depth. This includes infinite lists, reordering lists, and more. </p>
+                    <p>In a formula, we will go over how to integrate the side menu with the rest of an Ionic application stack, including navigation, routing, and tabs.</p>
                   </article>
                 </div>
                 <div class='tab-pane' id='similar-videos'>
                   <div class='similar-items list'>
                     <div class='item-row'>
                       <div class='similar-item'>
-                        <a href='/videos/sidemenu/'>The Sidemenu</a>
-                        <p>The side menu is a great way to display content without losing a lot of screen real estate. Learn how to add the side menu to your apps.</p>
+                        <a href='/videos/intro-to-lists-in-ionic/'>Ionic Lists - Part 1</a>
+                        <p>A core element to any app is the display of lists. From todos to social feeds, lists are the building block for much more complex UIs. Learn about lists in Ionic in this video.</p>
                       </div>
                       <div class='rule'></div>
                       <div class='similar-item'>
