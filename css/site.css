@@ -8216,18 +8216,23 @@ footer.main {
     footer.main .expand-wrapper .expand:after {
       bottom: 0;
       right: -8px; }
-  footer.main nav {
+  footer.main nav#nav {
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -ms-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
     font-family: "AvenirNextLTPro-Regular";
     display: inline-block;
     margin-left: 85px;
     opacity: 0; }
-    footer.main nav.expanded {
+    footer.main nav#nav.expanded {
       opacity: 1; }
-    footer.main nav a {
+    footer.main nav#nav a {
       margin-right: 40px;
       font-size: 13px;
       color: #afccfb; }
-      footer.main nav a:hover {
+      footer.main nav#nav a:hover {
         color: #4e8ef7; }
 
 .video article h1 {
