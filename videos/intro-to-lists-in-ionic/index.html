@@ -3,7 +3,7 @@
   <head>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta charset='utf-8'>
-    <title>Introduction to Ionic for iOS | Videos | Learn Ionic</title>
+    <title>Ionic Lists - Part 1 | Videos | Learn Ionic</title>
     <link href='/css/site.css' rel='stylesheet'>
     <link href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css' rel='stylesheet'>
   </head>
@@ -86,7 +86,7 @@
             </nav>
             <article>
               <header>
-                <h1>Introduction to Ionic for iOS</h1>
+                <h1>Ionic Lists - Part 1</h1>
                 <div class='byline'>
                   <img src='/img/authors/gerred-dillon.png'>
                   <span class='author'>
@@ -95,9 +95,9 @@
                   </span>
                   <time></time>
                 </div>
-                <p class='description'>Learn how to start using Ionic for iOS with this video. An introduction, prerequisites, and getting a basic application running on a simulator will all be shown.</p>
+                <p class='description'>A core element to any app is the display of lists. From todos to social feeds, lists are the building block for much more complex UIs. Learn about lists in Ionic in this video.</p>
               </header>
-              <iframe allowfullscreen='' frameborder='0' height='505' src='//www.youtube.com/embed/1RQCjwnlTRk?hd=1' width='847'></iframe>
+              <iframe allowfullscreen='' frameborder='0' height='505' src='//www.youtube.com/embed/G_n8r2VDuZ0' width='847'></iframe>
               <ul class='nav nav-tabs'>
                 <li class='active'>
                   <a data-toggle='tab' href='#details'>Details</a>
@@ -113,43 +113,45 @@
                 <div class='tab-pane active' id='details'>
                   <h2 id="resources">Resources:</h2>
                   
-                  <p><a href="http://ionicframework.com/docs/">Ionic Documentation</a></p>
+                  <p><a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat documentation</a></p>
                   
-                  <p><a href="http://cordova.apache.org/">Apache Cordova</a></p>
+                  <p><a href="http://ionicframework.com/docs/api/directive/ionList/">ion-list documentation</a></p>
                   
-                  <p><a href="http://nodejs.org/">node.js Project Homepage</a></p>
-                  
-                  <p><a href="http://cordova.apache.org/docs/en/2.5.0/guide_getting-started_ios_index.md.html">Apache Cordova - Getting started with iOS</a></p>
+                  <p><a href="http://learn.ionicframework.com/formulas/navigation-bar-vs-header-bar/">ion-header-bar Formula</a></p>
                 </div>
                 <div class='tab-pane' id='transcript'>
                   <article>
-                    <p>In this video we will learn about Ionic for iOS development. Ionic is a front-end framework for developing hybrid mobile apps with HTML5.</p>
+                    <p>Let’s talk about lists. Lists are a core UI element of any mobile app, and almost every app has some type of list. Because they are so essential to building an app, Ionic makes it easy to work with them.</p>
                     
-                    <p>To start using Ionic with iOS, you will need MacOSX with XCode, the XCode Command Line Tools, and node.js installed. Instructions for installing these pre-requisites are in the notes for this video.</p>
+                    <p>Here, I have the basic skeleton for an Ionic app. To add a list, let’s use the <code>ion-list</code> and <code>ion-item</code> directives. Creating a list of 5 items with these directives is pretty straightforward. When we refresh we can see that we have native-like scrolling and something that looks like a list.</p>
                     
-                    <p>Once you finish installing the pre-requisites, install Ionic from the Node Package Manager (NPM). If you are new to Node.js, NPM is a package manager for node.js that will resolve your dependencies. Install Ionic now with <code>npm install -g ionic cordova ios-sim</code>.</p>
+                    <p>It’s worth noting this works like any other directive in Angular. It wouldn’t be a list if we couldn’t add some data. First, I’m going to add our Todos controller into the markup. Next, I’m going to create the controller on the JavaScript side.</p>
                     
-                    <p>These modules are the basis for working with Ionic on iOS. The <code>ionic</code> module itself is the primary command line tool you will be working with. Cordova is Ionic’s underlying platform for building native mobile applications using HTML, CSS, and JavaScript. The <code>ios-sim</code> module allows us to run the iOS simulator from the command line.</p>
+                    <p>Let’s add some todos to our scope. I already have a few, for some chores around the house. Right now, the markup for our list is static and won’t respond to updates. Let’s change that using the <code>ng-repeat</code> directive. If you’re new to AngularJS, and don’t know what <code>ng-repeat</code> means, check out the notes for a link to the documentation on it.</p>
                     
-                    <p>We can now begin building apps with Ionic. Ionic ships with several templates, but we will start with a tabbed app. You can learn about other templates in the Getting Started guide in the notes for this video.</p>
+                    <p>Now that we’re done, we can save, refresh, and check out our list to see that it’s data driven. From our controller, we can remove items, add items, save, and watch it all update.</p>
                     
-                    <p>To start a new tab-based application, type <code>ionic start tabsApp tabs</code>.</p>
+                    <p>But it wouldn’t really be a todo list if we couldn’t add some items to it. Fortunately, adding to our list is as simple as adding to the todos array in our scope. For this example, I’m just going to add a header button. If this example looks unfamiliar to you, check out the formula for header bars in the notes.</p>
                     
-                    <p>This will create a folder called tabsApp, so change into the folder. When we look at the folder’s contents, we can see there is a lot happening. In the next video, we will break down the structure of an Ionic app and change our application. For now, we will get the application running in the iOS simulator.</p>
+                    <p>We now have an add button that is pointing to an addTodo function on click, so let’s wire that up. For our todo list, I’m just going to push a todo onto the end of our todos array. Now we can save, refresh, and try it out. When we click add, we watch the todos get added to the list.</p>
                     
-                    <p>An Ionic application does not ship with any platforms installed. To turn our app into something runnable on a device, we need to add specific platforms we want to use. In this case, we want iOS. In the terminal, type <code>ionic platform add ios</code>. Once Ionic resolves its dependencies, we can run the application. </p>
+                    <p>No todo list would be complete without a delete function. Ionic ships with that function by letting you toggle a delete mode on your list. Let’s add a flag to our scope to help us maintain that state.</p>
                     
-                    <p>Type <code>ionic emulate ios</code> to run the iOS simulator.</p>
+                    <p>Back in the markup add a <code>show-delete</code> directive to <code>ion-list</code>. This directive is used to determine if the list is in delete mode. If it is, the list will display a delete drawer next to each <code>ion-item</code> in the list. We also need a header button to toggle whether or not we are in delete mode. I’m just going to add a simple button that does that.</p>
                     
-                    <p>Once it’s running, we can now see that we have a working tabbed application. In the next video, we will talk about the structure of an Ionic project and begin customizing our app.</p>
+                    <p>Right now, we don’t actually have a delete button. Ionic is flexible in letting you decide exactly what that should look like. In this case I’m just going to replace our item with a standard looking delete button. When it’s clicked, all we’re going to do is splice that item out of the array and let the scope update.</p>
+                    
+                    <p>Now when we add some items, we can toggle delete, and remove them from our array again. This gets us started with using lists in Ionic.</p>
+                    
+                    <p>In the notes, I’ve linked to a formula that talks about lists more in depth. This includes infinite lists, reordering lists, and more. </p>
                   </article>
                 </div>
                 <div class='tab-pane' id='similar-videos'>
                   <div class='similar-items list'>
                     <div class='item-row'>
                       <div class='similar-item'>
-                        <a href='/videos/intro-to-lists-in-ionic/'>Ionic Lists - Part 1</a>
-                        <p>A core element to any app is the display of lists. From todos to social feeds, lists are the building block for much more complex UIs. Learn about lists in Ionic in this video.</p>
+                        <a href='/videos/getting-started/'>Introduction to Ionic for iOS</a>
+                        <p>Learn how to start using Ionic for iOS with this video. An introduction, prerequisites, and getting a basic application running on a simulator will all be shown.</p>
                       </div>
                     </div>
                   </div>

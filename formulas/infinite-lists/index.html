@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta charset='utf-8'>
+    <title>Formulas | Learn Ionic</title>
+    <link href='/css/site.css' rel='stylesheet'>
+    <link href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css' rel='stylesheet'>
+  </head>
+  <body class='full-page no-js'>
+    <script>
+      document.body.classList.remove('no-js');
+    </script>
+    <div class='container'>
+      <div class='row'>
+        <div class='side-nav'>
+          <div class='logo'>
+            <a href='/'>
+              <img alt='Learn Ionic Framework' height='43' src='/img/learn-ionicframework@2x.png' width='194'>
+            </a>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <a href='/videos/'>
+                  <i class='ion-videos'></i>
+                  <p>Videos</p>
+                </a>
+              </li>
+              <li>
+                <a class='active' href='/formulas/'>
+                  <i class='ion-formulas'></i>
+                  <p>Formulas</p>
+                </a>
+              </li>
+              <li>
+                <a href='/resources/'>
+                  <i class='ion-resources'></i>
+                  <p>Resources</p>
+                </a>
+              </li>
+            </ul>
+            <footer>
+              <ul>
+                <li>
+                  <a href='https://github.com/driftyco/ionic-learn/issues/new' target='_new'>
+                    <i class='ion-suggestions'></i>
+                    <p>Suggest a Topic</p>
+                  </a>
+                </li>
+                <li>
+                  <a href='http://forum.ionicframework.com/' target='_new'>
+                    <i class='ion-forum'></i>
+                    <p>Forums</p>
+                  </a>
+                </li>
+                <li>
+                  <a href='https://github.com/driftyco/ionic' target='_new'>
+                    <i class='ion-github'></i>
+                    <p>GitHub</p>
+                  </a>
+                </li>
+                <li>
+                  <a href='https://twitter.com/ionicframework' target='_new'>
+                    <i class='ion-twitter'></i>
+                    <p>Twitter</p>
+                  </a>
+                </li>
+                <li>
+                  <a href='https://plus.google.com/+Ionicframework/posts' target='_new'>
+                    <i class='ion-googleplus'></i>
+                    <p>Plus</p>
+                  </a>
+                </li>
+              </ul>
+            </footer>
+          </nav>
+        </div>
+        <div class='main-pane'>
+          <div class='content formula'>
+            <nav>
+              <a class='left' href='/formulas/'>
+                <i class='ion-chevron-left'></i>
+                <span style='margin-left:-5px;'>All Formulass</span>
+              </a>
+            </nav>
+            <article>
+              <header>
+                <h1>Exploring Ionic Lists</h1>
+                <div class='byline'>
+                  <img src='/img/authors/gerred-dillon.png'>
+                  <span class='author'>
+                    Written by
+                    <a href='https://twitter.com/justicefries' target='_new'>Gerred Dillon</a>
+                  </span>
+                  <time></time>
+                </div>
+              </header>
+              <h2 id="infinite-lists">Infinite Lists</h2>
+              
+              <p>A major trend in iOS UI design is in the use of infinite lists. Whether it is a status feed, directory, or list of recipes, infinite lists provide a way for users to meaningfully navigate. On the web, pagination often works literally - by splitting content across multiple pages. Infinite lists do away with that.</p>
+              
+              <p>To generate an infinite list in Ionic, we first need a list. Below is the markup and JS for a basic <code>ion-list</code>. To keep things simple, we are using an array of strings tracked by the index:</p>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="tag">&lt;html</span> <span class="attribute-name">ng-app</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">ionicApp</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;  <span class="tag">&lt;body</span> <span class="attribute-name">ng-controller</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MainCtrl</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;    <span class="tag">&lt;ion-header-bar</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">bar-positive</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;      <span class="tag">&lt;h1</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Infinite List<span class="tag">&lt;/h1&gt;</span>&#x000A;    <span class="tag">&lt;/ion-header-bar&gt;</span>&#x000A;    <span class="tag">&lt;ion-content&gt;</span>&#x000A;      <span class="tag">&lt;ion-list&gt;</span>&#x000A;        <span class="tag">&lt;ion-item</span> <span class="attribute-name">ng-repeat</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">item in items track by $index</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;          <span class="tag">&lt;p&gt;</span>{{item}}<span class="tag">&lt;/p&gt;</span>&#x000A;        <span class="tag">&lt;/ion-item&gt;</span>&#x000A;       <span class="tag">&lt;/ion-list&gt;</span>&#x000A;    <span class="tag">&lt;/ion-content&gt;</span>&#x000A;&#x000A;  <span class="tag">&lt;/body&gt;</span>&#x000A;<span class="tag">&lt;/html&gt;</span></pre></div>
+              </div>
+              </div>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="keyword">var</span> app = angular.module(<span class="string"><span class="delimiter">'</span><span class="content">ionicApp</span><span class="delimiter">'</span></span>, [<span class="string"><span class="delimiter">'</span><span class="content">ionic</span><span class="delimiter">'</span></span>])&#x000A;&#x000A;app.controller(<span class="string"><span class="delimiter">'</span><span class="content">MainCtrl</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(<span class="predefined">$scope</span>) {&#x000A;  <span class="keyword">var</span> currentStart = <span class="integer">0</span>&#x000A;  <span class="predefined">$scope</span>.items = []&#x000A;&#x000A;&#x000A;  <span class="predefined">$scope</span>.<span class="function">addItems</span> = <span class="keyword">function</span>() {&#x000A;    <span class="keyword">for</span> (<span class="keyword">var</span> i = currentStart; i &lt; currentStart+<span class="integer">20</span>; i++) {&#x000A;      <span class="predefined">$scope</span>.items.push(<span class="string"><span class="delimiter">&quot;</span><span class="content">Item </span><span class="delimiter">&quot;</span></span> + i)&#x000A;    }&#x000A;&#x000A;    currentStart += <span class="integer">20</span>&#x000A;  }&#x000A;&#x000A;  <span class="predefined">$scope</span>.addItems()&#x000A;})</pre></div>
+              </div>
+              </div>
+              
+              <p>This gives us a basic list with 20 items in it. Every time we call <code>$scope.addItems()</code>, we add 20 more items to the list. Straightforward. Right now, this only adds 20 items and is done. We want it to be infinite, and add 20 items until time runs out (or we run out of numbers).</p>
+              
+              <p>Ionic ships with the <code>ion-infinite-scroll</code> directive. Its function is more like a scroll detector: it detects when a user is scrolled to a given point above the bottom of the view (default 1%, or 99% of the way down), and executes a function. To use this, all we need to do is add it to our view:</p>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="tag">&lt;ion-list&gt;</span>&#x000A;  <span class="tag">&lt;ion-item</span> <span class="attribute-name">ng-repeat</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">item in items track by $index</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;    <span class="tag">&lt;p&gt;</span>{{item}}<span class="tag">&lt;/p&gt;</span>&#x000A;  <span class="tag">&lt;/ion-item&gt;</span>&#x000A;  <span class="tag">&lt;ion-infinite-scroll</span> <span class="attribute-name">on-infinite</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">addItems()</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/ion-infinite-scroll&gt;</span>&#x000A;<span class="tag">&lt;/ion-list&gt;</span></pre></div>
+              </div>
+              </div>
+              
+              <p>It’s really important that when the action for our infinite scroll is complete, we broadcast the <code>scroll.infiniteScrollComplete</code> event. This lets the directive know we are done, and cleans up the scroller and re-binds the event for the next round of scrolling.</p>
+              
+              <blockquote class="note">
+                <p><strong>Note:</strong> Remember to trigger the scroll.infiniteScrollComplete event when done. This can be done with <code>$scope.broadcast('scroll.infiniteScrollComplete')</code>. Without that, nothing will work properly after the first infinite scroll event triggers.</p>
+              </blockquote>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="predefined">$scope</span>.<span class="function">addItems</span> = <span class="keyword">function</span>() {&#x000A;  <span class="keyword">for</span> (<span class="keyword">var</span> i = currentStart; i &lt; currentStart+<span class="integer">20</span>; i++) {&#x000A;    <span class="predefined">$scope</span>.items.push(<span class="string"><span class="delimiter">&quot;</span><span class="content">Item </span><span class="delimiter">&quot;</span></span> + i)&#x000A;  }&#x000A;&#x000A;  currentStart += <span class="integer">20</span>&#x000A; <span class="predefined">$scope</span>.<span class="predefined">$broadcast</span>(<span class="string"><span class="delimiter">'</span><span class="content">scroll.infiniteScrollComplete</span><span class="delimiter">'</span></span>)&#x000A;}</pre></div>
+              </div>
+              </div>
+              
+              <p>That’s about all there is to infinite lists. By firing the <code>scroll.infiniteScrollComplete</code> event when new data is ready, the list can properly update and remain in a state of infinite scroll. More information is available at the <a href="http://ionicframework.com/docs/api/directive/ionInfiniteScroll/">documentation for ion-infinite-scroll</a>.</p>
+              
+              <h2 id="reordering-and-swiping">Reordering and swiping</h2>
+              
+              <p>Often, items in a list are ordered. This can be anything from a todo list to a series of bookmarks. Fortunately, Ionic has reordering built in. Reordering a list is initiated by toggling a reordering mode, much like how the delete mode is toggled. If you haven’t seen the delete button implemented, check out an <a href="/videos/intro-to-lists-in-ionic/">Introduction to Lists in Ionic</a> to find out more.</p>
+              
+              <p>To create a reorder control, we’ll start off with a normal looking list, with a Reorder button in the header:</p>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="tag">&lt;html</span> <span class="attribute-name">ng-app</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">ionicApp</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;  <span class="tag">&lt;body</span> <span class="attribute-name">ng-controller</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MainCtrl</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;    <span class="tag">&lt;ion-header-bar</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">bar-positive</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;      <span class="tag">&lt;h1</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>List Example<span class="tag">&lt;/h1&gt;</span>&#x000A;      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">buttons</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;        <span class="tag">&lt;button</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Reorder<span class="tag">&lt;/button&gt;</span>&#x000A;      <span class="tag">&lt;/div&gt;</span>&#x000A;    <span class="tag">&lt;/ion-header-bar&gt;</span>&#x000A;    <span class="tag">&lt;ion-content&gt;</span>&#x000A;      <span class="tag">&lt;ion-list&gt;</span>&#x000A;        <span class="tag">&lt;ion-item</span> <span class="attribute-name">ng-repeat</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">item in items</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>{{item.title}}<span class="tag">&lt;/ion-item&gt;</span>&#x000A;      <span class="tag">&lt;/ion-list&gt;</span>&#x000A;    <span class="tag">&lt;/ion-content&gt;</span>&#x000A;&#x000A;  <span class="tag">&lt;/body&gt;</span>&#x000A;<span class="tag">&lt;/html&gt;</span></pre></div>
+              </div>
+              </div>
+              
+              <p>To add some items and track what mode the view is in, we add a showReordering property to the scope:</p>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="keyword">var</span> app = angular.module(<span class="string"><span class="delimiter">'</span><span class="content">ionicApp</span><span class="delimiter">'</span></span>, [<span class="string"><span class="delimiter">'</span><span class="content">ionic</span><span class="delimiter">'</span></span>])&#x000A;&#x000A;app.controller(<span class="string"><span class="delimiter">'</span><span class="content">MainCtrl</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(<span class="predefined">$scope</span>) {&#x000A;  <span class="predefined">$scope</span>.items = [&#x000A;    {<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Item 1</span><span class="delimiter">&quot;</span></span>},&#x000A;    {<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Item 2</span><span class="delimiter">&quot;</span></span>},&#x000A;    {<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Item 3</span><span class="delimiter">&quot;</span></span>},&#x000A;    {<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Item 4</span><span class="delimiter">&quot;</span></span>},&#x000A;    {<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Item 5</span><span class="delimiter">&quot;</span></span>},&#x000A;  ]&#x000A;  <span class="predefined">$scope</span>.data = {&#x000A;    <span class="key">showReordering</span>: <span class="predefined-constant">false</span>&#x000A;  }&#x000A;})</pre></div>
+              </div>
+              </div>
+              
+              <p>At this point, we have a list with 5 items in it, ready for reordering and other things. First, we need to tell <code>ion-list</code> to look for the showReordering property and do something with it:</p>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="tag">&lt;ion-list</span> <span class="attribute-name">show-reorder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">data.showReordering</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span></pre></div>
+              </div>
+              </div>
+              
+              <p>This indicates to <code>ion-list</code> that this list can be reordered, and to show the drawer when that functionality is enabled. When enabled, an <code>ion-reorder-button</code> will be shown, allowing users to grab the handle and move it around, calling a function when a reorder is completed. At this point, a button won’t show. Why not?</p>
+              
+              <p>To keep Ionic flexible, the actual UI elements for reordering elements is up to the user and not magically provided. Let’s update our <code>ion-item</code> directive to include this:</p>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="tag">&lt;ion-item</span> <span class="attribute-name">ng-repeat</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">item in items</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;  {{item.title}}&#x000A;  <span class="tag">&lt;ion-reorder-button</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">ion-navicon</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/ion-reorder-button&gt;</span>&#x000A;<span class="tag">&lt;/ion-item&gt;</span></pre></div>
+              </div>
+              </div>
+              
+              <p>We still don’t see anything, and that’s because we’re not actually toggling a reordering. If you set $scope.data.showReordering to true, you’ll see the handles on the right side. We can do one better by making the button actually toggle this:</p>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="tag">&lt;button</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">data.showReordering = !data.showReordering</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Reorder<span class="tag">&lt;/button&gt;</span></pre></div>
+              </div>
+              </div>
+              
+              <p>Run it, and now when the Reorder button is clicked, the drawer and item handles animate in and out. Without actually reordering items, though, this is just eyecandy. To actually reorder items, the <code>ion-reorder-button</code> has an <code>on-reorder</code> attribute that calls a function, and has two special variables available to it: <code>$fromIndex</code> and <code>$toIndex</code>.</p>
+              
+              <p>These are generated by <code>ion-reorder-button</code> to let the developer figure out the index an item was drawn from and to. We can update our markup to reflect this:</p>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="tag">&lt;ion-reorder-button</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">ion-navicon</span><span class="delimiter">&quot;</span></span>&#x000A;                    <span class="attribute-name">on-reorder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">reorderItem(item, $fromIndex, $toIndex)</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;<span class="tag">&lt;/ion-reorder-button&gt;</span></pre></div>
+              </div>
+              </div>
+              
+              <p>All we need now is a reorderItem function to take care of this. For the simple case in this list, it’s pretty easy. All we need to do is remove the item from its original spot in the array, and insert it at the new index. Two splices takes care of this:</p>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="predefined">$scope</span>.<span class="function">reorderItem</span> = <span class="keyword">function</span>(item, fromIndex, toIndex) {&#x000A;  <span class="predefined">$scope</span>.items.splice(fromIndex, <span class="integer">1</span>)&#x000A;  <span class="predefined">$scope</span>.items.splice(toIndex, <span class="integer">0</span>, item)&#x000A;}</pre></div>
+              </div>
+              </div>
+              
+              <p>The last argument of splice is an item to insert into the array, making this a simple transformation. This function could also be used to make AJAX calls to update ordering on the server, or update the sortIndex of underlying data. We now have a fully functioning reorder control.</p>
+              
+              <h2 id="what-about-custom-list-actions">What about custom list actions?</h2>
+              
+              <p>Ionic supports swiping items. This can be used to perform contextual actions on an item. The <code>can-swipe</code> directive (defaults to true) on <code>ion-list</code> and the <code>ion-option-button</code> allows just that. Returning to our basic list from above, we can try this out:</p>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="tag">&lt;html</span> <span class="attribute-name">ng-app</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">ionicApp</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;  <span class="tag">&lt;body</span> <span class="attribute-name">ng-controller</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MainCtrl</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;    <span class="tag">&lt;ion-header-bar</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">bar-positive</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;      <span class="tag">&lt;h1</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Infinite List<span class="tag">&lt;/h1&gt;</span>&#x000A;    <span class="tag">&lt;/ion-header-bar&gt;</span>&#x000A;    <span class="tag">&lt;ion-content&gt;</span>&#x000A;      <span class="tag">&lt;ion-list&gt;</span>&#x000A;        <span class="tag">&lt;ion-item</span> <span class="attribute-name">ng-repeat</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">item in items</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>&#x000A;          {{item.title}}&#x000A;          <span class="tag">&lt;ion-option-button</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button-positive</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">ng-click</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">editItem(item)</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Edit<span class="tag">&lt;/ion-option-button&gt;</span>&#x000A;        <span class="tag">&lt;/ion-item&gt;</span>&#x000A;      <span class="tag">&lt;/ion-list&gt;</span>&#x000A;    <span class="tag">&lt;/ion-content&gt;</span>&#x000A;&#x000A;  <span class="tag">&lt;/body&gt;</span>&#x000A;<span class="tag">&lt;/html&gt;</span></pre></div>
+              </div>
+              </div>
+              
+              <div><div class="CodeRay">
+                <div class="code"><pre><span class="keyword">var</span> app = angular.module(<span class="string"><span class="delimiter">'</span><span class="content">ionicApp</span><span class="delimiter">'</span></span>, [<span class="string"><span class="delimiter">'</span><span class="content">ionic</span><span class="delimiter">'</span></span>])&#x000A;&#x000A;app.controller(<span class="string"><span class="delimiter">'</span><span class="content">MainCtrl</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(<span class="predefined">$scope</span>) {&#x000A;  <span class="predefined">$scope</span>.items = [&#x000A;    {<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Item 1</span><span class="delimiter">&quot;</span></span>},&#x000A;    {<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Item 2</span><span class="delimiter">&quot;</span></span>},&#x000A;    {<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Item 3</span><span class="delimiter">&quot;</span></span>},&#x000A;    {<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Item 4</span><span class="delimiter">&quot;</span></span>},&#x000A;    {<span class="key">title</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Item 5</span><span class="delimiter">&quot;</span></span>},&#x000A;  ]&#x000A;&#x000A;  <span class="predefined">$scope</span>.<span class="function">editItem</span> = <span class="keyword">function</span>(item) {&#x000A;    item.title = <span class="string"><span class="delimiter">&quot;</span><span class="content">Edited Item</span><span class="delimiter">&quot;</span></span>&#x000A;  }&#x000A;})</pre></div>
+              </div>
+              </div>
+              
+              <p>Everything about <code>ion-option-button</code> is standard AngularJS. Run this, and swipe any of the items to the left to reveal the contextual Edit button.</p>
+              
+              <h2 id="parting-notes">Parting Notes</h2>
+              
+              <p>All of these can be combined and customized to make incredibly powerful lists built on very simple markup. Between infinite lists, reordering, deletion, and contextual options, Ionic ships with a multitude of functions for handling lists. The next formula in this series will discuss using custom gestures on lists to add even more advanced functionality, and discuss handling massive lists (with tens or hundreds of thousands of items) using <code>collection-repeat</code>.</p>
+              
+              <p>The scratchpad below has a “kitchen sink” implementation with everything available on the infinite list we started in this formula.</p>
+              <section class='scratchpad'>
+                <p>Try this tutorial out below in the Scratchpad:</p>
+                <div id='scratch'></div>
+              </section>
+            </article>
+          </div>
+        </div>
+      </div>
+      <footer class='main'>
+        <span class='attribution'>&copy; 2014 Drifty Co.</span>
+        <span class='expand-wrapper'>
+          <span class='expand'></span>
+        </span>
+        <nav>
+          <a href='#' target='_blank'>Privacy</a>
+          <a href='#' target='_blank'>Terms</a>
+          <a href='' target='_blank'>Contact us</a>
+          <a href='https://github.com/driftyco/ionic-learn/issues/new' target='_blank'>Suggestions</a>
+          <a href='#' target='_blank'>Scratchpad</a>
+          <a href='http://ionicons.com/' target='_blank'>Ionicons</a>
+          <a href='http://ionicframework.com/jobs/' target='_blank'>Jobs</a>
+          <a href='http://forum.ionicframework.com/' target='_blank'>Forum</a>
+          <a href='http://ionicframework.com/blog/' target='_blank'>Blog</a>
+        </nav>
+      </footer>
+    </div>
+    <div class='get-ionic-wrapper viewed'>
+      <a class='get-ionic' href='http://www.ionicframework.com' target='_new'>Get building with Ionic today!</a>
+      <a class='close-cta ion-ios7-close-empty' href='#'></a>
+    </div>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js'></script>
+    <script src='//scratch.ionicsdk.com/static/js/embed.js'></script>
+      <script>
+        $(function() {
+          var getTemplate = function(url) {
+            return $.ajax({url: location.pathname + '/' + url, dataType: 'text'})
+          }
+        
+          $.when(getTemplate('template.html'), getTemplate('style.css'), getTemplate('script.js')).then(function(html, css, js) {
+            var scratch = new IonicScratch({
+              el: document.getElementById('scratch'),
+              width: '100%',
+              height: '600px',
+              html: html[0],
+              css: css[0],
+              js: js[0]
+            });
+          })
+        })
+      </script>
+    <script src='/js/main.js'></script>
+  </body>
+</html>

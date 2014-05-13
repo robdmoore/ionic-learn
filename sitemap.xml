@@ -9,8 +9,20 @@
     <lastmod>2014-05-02</lastmod>
   </url>
   <url>
+    <loc>http://learn.ionicframework.com/formulas/infinite-lists/</loc>
+    <lastmod>2014-05-13</lastmod>
+  </url>
+  <url>
+    <loc>http://learn.ionicframework.com/formulas/infinite-lists/style.css</loc>
+    <lastmod>2014-05-13</lastmod>
+  </url>
+  <url>
+    <loc>http://learn.ionicframework.com/formulas/infinite-lists/template.html</loc>
+    <lastmod>2014-05-13</lastmod>
+  </url>
+  <url>
     <loc>http://learn.ionicframework.com/formulas/navigation-bar-vs-header-bar/</loc>
-    <lastmod>2014-05-05</lastmod>
+    <lastmod>2014-05-13</lastmod>
   </url>
   <url>
     <loc>http://learn.ionicframework.com/formulas/navigation-bar-vs-header-bar/style.css</loc>
@@ -34,5 +46,9 @@
   <url>
     <loc>http://learn.ionicframework.com/videos/getting-started/</loc>
     <lastmod>2014-04-22</lastmod>
+  </url>
+  <url>
+    <loc>http://learn.ionicframework.com/videos/intro-to-lists-in-ionic/</loc>
+    <lastmod>2014-05-08</lastmod>
   </url>
 </urlset>
