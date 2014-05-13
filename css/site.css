@@ -8377,6 +8377,8 @@ footer.main {
   font-weight: 300;
   font-size: 15px;
   line-height: 30px; }
+.content.formula article > p, .content.video article > p {
+  margin: 25px 0; }
 .content.formula .CodeRay, .content.video .CodeRay {
   background-color: #ebf0f6; }
   .content.formula .CodeRay pre, .content.video .CodeRay pre {
