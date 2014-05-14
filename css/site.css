@@ -8390,7 +8390,8 @@ footer.main {
   background-color: #ebf0f6; }
   .content.formula .CodeRay pre, .content.video .CodeRay pre {
     border: none;
-    border-radius: 5px; }
+    border-radius: 5px;
+    color: #3c4f6e; }
 .content.formula blockquote.quote, .content.video blockquote.quote {
   padding: 0 30px;
   margin: 35px 0;

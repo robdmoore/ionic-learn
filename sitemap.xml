@@ -9,6 +9,18 @@
     <lastmod>2014-05-02</lastmod>
   </url>
   <url>
+    <loc>http://learn.ionicframework.com/formulas/backend-data/</loc>
+    <lastmod>2014-05-14</lastmod>
+  </url>
+  <url>
+    <loc>http://learn.ionicframework.com/formulas/backend-data/style.css</loc>
+    <lastmod>2014-05-14</lastmod>
+  </url>
+  <url>
+    <loc>http://learn.ionicframework.com/formulas/backend-data/template.html</loc>
+    <lastmod>2014-05-14</lastmod>
+  </url>
+  <url>
     <loc>http://learn.ionicframework.com/formulas/infinite-lists/</loc>
     <lastmod>2014-05-13</lastmod>
   </url>
@@ -18,7 +30,10 @@
   </url>
   <url>
     <loc>http://learn.ionicframework.com/formulas/infinite-lists/template.html</loc>
-    <lastmod>2014-05-13</lastmod>
+    <lastmod>2014-05-14</lastmod>
+  </url>
+  <url>
+    <loc>http://learn.ionicframework.com/formulas/ionic-angularjs-backend/</loc>
   </url>
   <url>
     <loc>http://learn.ionicframework.com/formulas/ionic-basics/</loc>
@@ -36,7 +51,7 @@
   </url>
   <url>
     <loc>http://learn.ionicframework.com/formulas/navigation-bar-vs-header-bar/template.html</loc>
-    <lastmod>2014-05-13</lastmod>
+    <lastmod>2014-05-14</lastmod>
   </url>
   <url>
     <loc>http://learn.ionicframework.com/resources/</loc>
