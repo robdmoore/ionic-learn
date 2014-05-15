@@ -108,7 +108,7 @@
               
               <p>Fortunately, with web technologies storing data locally is fast and easy.</p>
               
-              <h3 id="local-storage">Local Storage</h3>
+              <h2 id="local-storage">Local Storage</h2>
               
               <p>Browsers provide a convenient module for storing data in a simple key &lt;-&gt; value fashion called <code>localStorage</code>. This is an object on <code>window</code> that we can get and set String values easily with:</p>
               
@@ -121,7 +121,7 @@
               
               <p>In localStorage, we can only set String values. But we’ll see soon that this isn’t much of a problem.</p>
               
-              <h3 id="storing-objects">Storing Objects</h3>
+              <h2 id="storing-objects">Storing Objects</h2>
               
               <p>Since we can only store Strings in localStorage, how would we store objects? Well, we just have to convert them to JSON first!</p>
               
@@ -132,7 +132,7 @@
               
               <p>the <code>post</code> variable will now contain the full object. The same can be done for arrays or any other object!</p>
               
-              <h3 id="icloud-backup">iCloud Backup</h3>
+              <h2 id="icloud-backup">iCloud Backup</h2>
               
               <p>When using <code>localStorage</code> in a mobile app that you intend to deploy to the Apple App Store, you must take into account iCloud storage and the iOS Data Storage Guidelines which suggest, among other things, that only data the user <em>creates</em> should be backed up to iCloud.</p>
               
@@ -143,7 +143,7 @@
               </div>
               </div>
               
-              <h3 id="angularjs-service">AngularJS Service</h3>
+              <h2 id="angularjs-service">AngularJS Service</h2>
               
               <p>Using <code>window.localStorage</code> directly is just fine, but having to set and parse Strings gets tiresome after a while. Use this simple AngularJS service for setting and retrieving strings or objects easily:</p>
               
@@ -159,7 +159,7 @@
               </div>
               </div>
               
-              <h3 id="suggestions">Suggestions</h3>
+              <h2 id="suggestions">Suggestions</h2>
               
               <p>Since <code>localStorage</code> is a very simple way to store String values for keys, it’s no substitue for a real database. I suggest using Local Storage to persist a small number of larger objects.</p>
               
