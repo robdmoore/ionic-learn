@@ -103,6 +103,10 @@
                   </span>
                   <time></time>
                 </div>
+                <div class='social-buttons'>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-text="Add photos and video to your @cordova, @AngularJS, and Ionic mobile apps" data-via="ionicframework" data-related="ionicframework">Tweet</a>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </div>
               </header>
               <p>Many apps use the functionality of the user’s camera to add photo and video support to their apps. Adding media support to your app with the <a href="http://plugins.cordova.io/#/package/org.apache.cordova.camera">Cordova Camera API</a> is a snap (yea, I just went there):</p>
               
@@ -133,7 +137,7 @@
               <p>Now that we have the plugin installed, we can use the camera API from our Javascript:</p>
               
               <div><div class="CodeRay">
-                <div class="code"><pre>&#x000A;<span class="keyword">function</span> <span class="function">takePicture</span>() {&#x000A;  navigator.camera.getPicture(<span class="keyword">function</span>(imageURI) {&#x000A;&#x000A;    <span class="comment">// imageURI is the URL of the image that we can use for</span>&#x000A;    <span class="comment">// an &lt;img&gt; element or backgroundImage.</span>&#x000A;&#x000A;  }, <span class="keyword">function</span>(err) {&#x000A;&#x000A;    <span class="comment">// Ruh-roh, something bad happened</span>&#x000A;&#x000A;  }, cameraOptions);&#x000A;</pre></div>
+                <div class="code"><pre>&#x000A;<span class="keyword">function</span> <span class="function">takePicture</span>() {&#x000A;  navigator.camera.getPicture(<span class="keyword">function</span>(imageURI) {&#x000A;&#x000A;    <span class="comment">// imageURI is the URL of the image that we can use for</span>&#x000A;    <span class="comment">// an &lt;img&gt; element or backgroundImage.</span>&#x000A;&#x000A;  }, <span class="keyword">function</span>(err) {&#x000A;&#x000A;    <span class="comment">// Ruh-roh, something bad happened</span>&#x000A;&#x000A;  }, cameraOptions);&#x000A;}&#x000A;</pre></div>
               </div>
               </div>
               

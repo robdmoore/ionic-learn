@@ -103,10 +103,14 @@
                   </span>
                   <time></time>
                 </div>
+                <div class='social-buttons'>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-via="ionicframework" data-related="ionicframework">Tweet</a>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </div>
               </header>
               <p>There are several ways to create a header at the top of the screen in Ionic. Distinct differences exist between the navigation bar and the header bar and their uses within the framework. In this formula, we will create both types and explore the differences while introducing ourselves to Ionic’s navigation view.</p>
               
-              <h3 id="a-basic-header">A basic header</h3>
+              <h2 id="a-basic-header">A basic header</h2>
               
               <p>Placing a header bar on a view in Ionic is straightforward. The <code>ion-header-bar</code> directive lets us create an empty header bar on top of the screen:</p>
               
@@ -123,7 +127,7 @@
               
               <p>Now that we have an empty header bar, let’s make it much more interesting by adding a title and buttons.</p>
               
-              <h3 id="colors-are-great-but-its-useless">Colors are great, but it’s useless!</h3>
+              <h2 id="colors-are-great-but-its-useless">Colors are great, but it’s useless!</h2>
               
               <p>Typically, a header bar isn’t just a nice orange blob on top of our screen. To make things more visually interesting (and begin adding functionality), let’s add a title and some buttons:</p>
               
@@ -140,7 +144,7 @@
               
               <p>This makes <code>ion-header-bar</code> great for simple views that don’t need complex state hierarchies, and is the thing to use when all you need is a header (or subheader) attached to any view. When things need to get more complex, that’s where Ionic’s navigation views and <code>ion-nav-bar</code> come into play.</p>
               
-              <h3 id="navigate-this-way">Navigate… this way</h3>
+              <h2 id="navigate-this-way">Navigate… this way</h2>
               
               <p>Our app is now getting more complicated. We now want to dive into a detail view to find more information about prior screens, add detail pages to the detail pages, and other things that make for a useful app. To do this, we refactor our codebase to a simple implemetation of <code>ion-nav-view</code>:</p>
               
@@ -160,13 +164,13 @@
               
               <p>A lot has changed since the last example. We’ll break it down into steps.</p>
               
-              <h4 id="configure-ionics-router">1. Configure Ionic’s router</h4>
+              <h2 id="configure-ionics-router">1. Configure Ionic’s router</h2>
               
               <p>To activate Ionic’s navigation system, we need to configure the router’s states. To do this, we setup the states with <code>$stateProvider</code>, with <code>$urlRouterProvider</code> letting us specify the default route when loading the module. For the uniniated to the router, it includes other options to help make complex tasks simple. To load the template, we specify the file. Angular will search <code>$templateCache</code> for this, and only request it if it’s not already available in the cache.</p>
               
               <p>In another formula we will go over Ionic’s navigation in depth. For now, we will focus on adding a navbar.</p>
               
-              <h4 id="setup-homehtml-view">2. Setup home.html view</h4>
+              <h2 id="setup-homehtml-view">2. Setup home.html view</h2>
               
               <p>To add home.html to the <code>$templateCache</code> when initializing Angular,  we add a script of type <code>text/ng-template</code> with an id of the page name. Within, we wrap everything within <code>ion-view</code>. The title attribute allows us to specify the title of the nav bar. <code>ion-content</code> gives a content space under the header where we can begin to place content.</p>
               
@@ -183,7 +187,7 @@
               
               <p>Running this, we now have a link that will take us into a detail page, and tapping the back button will return us to our home. Several things make this possible. We have added a detail state by the name of detail, and the <code>ui-sref</code> directive on our anchor tag binds the link to the state defined in ui-router. The <code>ion-nav-back-button</code> directive inspects the state heirarchy to determine whether or not to display a back button. If the app can go back, the button is rendered, and the reverse is true.</p>
               
-              <h3 id="contrasting-the-two">Contrasting the two</h3>
+              <h2 id="contrasting-the-two">Contrasting the two</h2>
               
               <p>In the examples above and the scratchpad below, the differences between <code>ion-header-bar</code> and <code>ion-nav-bar</code> are clear. A standard header bar serves on its own as a pure UI element, ready for extension based on the developer’s needs, but doesn’t come with the advanced integration into Ionic’s router and navigation stack. The nav bar is far more opinionated in its use, but offers a lot of power in return. Explore the scratchpad below to keep learning about the two, or check out the <a href="ionicframework.com/docs/">Ionic documentation</a> and start building!</p>
               <section class='scratchpad'>

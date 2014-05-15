@@ -103,14 +103,16 @@
                   </span>
                   <time></time>
                 </div>
+                <div class='social-buttons'>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-text="Integrate a backend service into your hybrid apps with AngularJS and Ionic" data-via="ionicframework" data-related="ionicframework">Tweet</a>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </div>
               </header>
-              <h2 id="backend-services">Backend Services</h2>
-              
               <p>What is a mobile app without interesting data? It seems nearly every app we use today is sending and receiving data from a remote location, and letting us share our own data with the world.</p>
               
               <p>Luckily, adding backend functionality to a mobile app is incredibly easy with AngularJS.</p>
               
-              <h3 id="http">$http</h3>
+              <h2 id="http">$http</h2>
               
               <p>Sometimes, all we need to do is make simple, periodic HTTP requests to a remote server. In those cases, the <code>$http</code> Angular service is exactly what we need:</p>
               
@@ -137,7 +139,7 @@
               
               <p>In future formulas we will see how to do local testing of backend resources using AngularJS Mocks.</p>
               
-              <h3 id="ngresource">ngResource</h3>
+              <h2 id="ngresource">ngResource</h2>
               
               <p>Often our backend data is modelled in a way that naturally fits into the client-side data models in our app. For example, if our app has a list of <code>Posts</code> that we show in a stream, a <code>Post</code> model becomes a core data element on both the server <em>and</em> the client.</p>
               
@@ -181,7 +183,7 @@
               
               <p>ngResource is a powerful module and has a lot of fun functionality. Be sure to take a look at the official <a href="https://docs.angularjs.org/api/ngResource/service/$resource">ngResource</a> docs for more info. </p>
               
-              <h3 id="summary">Summary</h3>
+              <h2 id="summary">Summary</h2>
               
               <p>Interacting with backend data is crucial for most mobile apps, and with AngularJS it’s a breeze. For simple backend interactions, the <code>$http</code> module lets us do simple HTTP calls to an API end point.</p>
               
