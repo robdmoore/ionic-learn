@@ -9,6 +9,9 @@
     <lastmod>2014-05-02</lastmod>
   </url>
   <url>
+    <loc>http://learn.ionicframework.com/formulas/angularjs/</loc>
+  </url>
+  <url>
     <loc>http://learn.ionicframework.com/formulas/backend-data/</loc>
     <lastmod>2014-05-14</lastmod>
   </url>
@@ -19,6 +22,13 @@
   <url>
     <loc>http://learn.ionicframework.com/formulas/backend-data/template.html</loc>
     <lastmod>2014-05-14</lastmod>
+  </url>
+  <url>
+    <loc>http://learn.ionicframework.com/formulas/cordova-camera/</loc>
+    <lastmod>2014-05-14</lastmod>
+  </url>
+  <url>
+    <loc>http://learn.ionicframework.com/formulas/cordova/</loc>
   </url>
   <url>
     <loc>http://learn.ionicframework.com/formulas/infinite-lists/</loc>
@@ -33,13 +43,22 @@
     <lastmod>2014-05-14</lastmod>
   </url>
   <url>
-    <loc>http://learn.ionicframework.com/formulas/ionic-angularjs-backend/</loc>
-  </url>
-  <url>
     <loc>http://learn.ionicframework.com/formulas/ionic-basics/</loc>
   </url>
   <url>
     <loc>http://learn.ionicframework.com/formulas/ionic-lists/</loc>
+  </url>
+  <url>
+    <loc>http://learn.ionicframework.com/formulas/localstorage/</loc>
+    <lastmod>2014-05-14</lastmod>
+  </url>
+  <url>
+    <loc>http://learn.ionicframework.com/formulas/localstorage/style.css</loc>
+    <lastmod>2014-05-14</lastmod>
+  </url>
+  <url>
+    <loc>http://learn.ionicframework.com/formulas/localstorage/template.html</loc>
+    <lastmod>2014-05-14</lastmod>
   </url>
   <url>
     <loc>http://learn.ionicframework.com/formulas/navigation-bar-vs-header-bar/</loc>

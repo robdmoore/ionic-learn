@@ -8319,6 +8319,12 @@ footer.main {
     padding-top: 30px;
     margin-top: 30px; }
 
+.content.formula img.screenshot, .content.video img.screenshot {
+  display: block;
+  max-width: 320px;
+  margin: 15px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px; }
 .content.formula iframe, .content.video iframe {
   width: 100%;
   height: 600px;
@@ -8378,6 +8384,8 @@ footer.main {
   font-weight: 400;
   margin-bottom: 0px;
   margin-top: 40px; }
+.content.formula h3, .content.video h3 {
+  margin-top: 35px; }
 .content.formula p, .content.video p {
   color: #727983;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -8385,7 +8393,7 @@ footer.main {
   font-size: 15px;
   line-height: 30px; }
 .content.formula article > p, .content.video article > p {
-  margin: 10px 0px 30px 0px; }
+  margin: 15px 0px 15px 0px; }
 .content.formula .CodeRay, .content.video .CodeRay {
   background-color: #ebf0f6; }
   .content.formula .CodeRay pre, .content.video .CodeRay pre {

@@ -94,7 +94,7 @@
             </nav>
             <article>
               <header>
-                <h1>Integrating a Backend Service</h1>
+                <h1>Integrating a Backend Service with AngularJS</h1>
                 <div class='byline'>
                   <img src='/img/authors/max-lynch.png'>
                   <span class='author'>
@@ -143,7 +143,7 @@
               
               <p>Additionally, backend services that work on individual models like this often implement a RESTful API where we can easily create, read, update, and delete individual items, or grab lists of items.</p>
               
-              <p>For the sake of this example, let’s assume we have an API for posts. This API has a few endpoints and access some common HTTP verbs:</p>
+              <p>For the sake of this example, let’s assume we have an API for posts. This API has a few endpoints supporting some common HTTP verbs:</p>
               
               <pre><code>GET /api/post - Lists all posts&#x000A;POST /api/post - Creates a new Post&#x000A;GET /api/post/:id - Returns the data for that specific post with the id of :id&#x000A;PUT /api/post/:id - Updates the information for a specific post&#x000A;DELETE /api/post/:id - Deletes the specific post&#x000A;</code></pre>
               
@@ -154,7 +154,7 @@
               </div>
               </div>
               
-              <p>In the example above, note we’ve added a requirement to import the <code>ngResource</code> module. You’ll also need to include the <code>angular-resource.js</code> script include.</p>
+              <p>In the example above, we are now importing the <code>ngResource</code> module. You’ll also need to include the <code>angular-resource.js</code> script include.</p>
               
               <p>Notice we’ve also opted for an Angular Factory. This makes using a <code>Post</code> easy in our code, and we can treat it as a natural data model:</p>
               
@@ -194,6 +194,17 @@
                 <p>Try this tutorial out below in the Scratchpad:</p>
                 <div id='scratch'></div>
               </section>
+              <footer>
+                <h6>further reading</h6>
+                <div class='similar-items list'>
+                  <div class='item-row'>
+                    <div class='similar-item'>
+                      <a href='/formulas/localstorage/'>Using Local Storage</a>
+                      <p>Mobile apps require seamless online and offline functionality, in large part due to the reliability of current mobile networks, and to reduce network requests that take time and hurt battery life. Learn how to use Local Storage to persist data for fast and reliable offline access.</p>
+                    </div>
+                  </div>
+                </div>
+              </footer>
             </article>
           </div>
         </div>
